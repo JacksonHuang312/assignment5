@@ -1,18 +1,32 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import './Featured.css';
-import sing2 from '../assets/sing2.jpg';
-import pacificRim from '../assets/pacificrim.jpg';
-import karateKid from '../assets/karatekid.jpg';
 
 function Featured() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=${import.meta.env.VITE_TMDB_KEY}`
+        );
+        const allMovies = response.data.results;
+        const randomMovies = allMovies.sort(() => 0.5 - Math.random()).slice(0, 5);
+        setMovies(randomMovies);
+    };
+    
+    getData();
+  }, []);
+
   return (
-    <>
-      <h1 className="featured-text">Featured</h1>
-      <div className="feature-section">
-        <img src={pacificRim} alt="Pacific Rim" />
-        <img src={sing2} alt="Sing 2" />
-        <img src={karateKid} alt="Karate Kid" />
-      </div>
-    </>
+    <div className="movie-container">
+      {movies && movies.map(movie => (
+        <div className="movie-card" key={movie.id}>
+          <h1>{`${movie.title}`}</h1>
+          <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`${movie.id}`} />
+        </div>
+      ))}
+    </div>
   );
 }
 
