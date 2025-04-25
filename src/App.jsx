@@ -1,17 +1,18 @@
-import { useState } from 'react'
-import Featured from './components/Featured.jsx'
-import Header from './components/Header.jsx'
-import Hero from './components/Hero.jsx'
-import './App.css'
+import './App.css';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Featured from './components/Featured';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
-      <Featured />
       <Header />
       <Hero />
+      <Featured />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
