@@ -1,19 +1,14 @@
 import './App.css';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Featured from './components/Featured';
-import Footer from './components/Footer';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomeView from './Views/HomeView';
 
 function App() {
- 
   return (
-    <>
-      <Header />
-      <Hero />
-      <Featured />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
