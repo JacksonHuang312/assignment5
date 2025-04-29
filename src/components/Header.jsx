@@ -1,21 +1,26 @@
 import './Header.css';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate('/login');
+  };
+  const handleRegister = () => {
+    navigate('/register');
+  }
+
   return (
     <header className="header">
       <h1 className="title">Fentstreams</h1>
       <div>
-        <div className="input-boxes">
-          <input type="text" id="username" placeholder="Username" />
-          <br />
-          <input type="password" id="password" placeholder="Password" />
-        </div>
         <div className="buttons">
           <div>
-            <button className="login-button">Login</button>
+            <button className="login-button" onClick={handleLogin}>Login</button>
           </div>
           <div>
-            <button className="register-button">Register</button>
+            <button className="register-button" onClick={handleRegister}>Register</button>
           </div>
         </div>
       </div>
