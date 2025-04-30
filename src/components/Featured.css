@@ -59,6 +59,7 @@
 
 .movie-poster {
   width: 100%;
+  max-width: 13.5rem;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
