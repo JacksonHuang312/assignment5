@@ -4,7 +4,6 @@ import "./HomeView.css";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Featured from "../components/Featured";
-import Genres from "../components/Genres";
 import Footer from "../components/Footer";
 
 function HomeView() {
@@ -13,7 +12,6 @@ function HomeView() {
       <Header />
       <Hero />
       <Featured />
-      <Genres />
       <Footer />
     </div>
   );
