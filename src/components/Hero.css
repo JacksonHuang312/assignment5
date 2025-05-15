@@ -1,10 +1,10 @@
 .hero-section {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
-  
-  .hero-image {
-    width: 98%;
-    height: auto;
-  }
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-image {
+  width: 98%;
+  height: auto;
+}
